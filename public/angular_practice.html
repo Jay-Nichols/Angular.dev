@@ -8,13 +8,14 @@
 </head>
 <body>
 	<div>
-      	<label>Name:</label>
+      	<label>Enter your first name:</label>
       	<input type="text" ng-model="firstName" placeholder="Enter a name here">
-      	<h1>Hello {{ firstName }}!</h1>
-      	<h2>The full name is: {{ fullName() }}</h2>
+      	<h1>Hello {{firstName}}!</h1>
+      	<h2>The full name is: {{fullName()}}</h2>
     </div>
    
-	<div>{{ 12347859834.9345345 | number:2 }}</div>
+	<div>{{12347859834.9345345 | number:2}}</div>
+	<div>{{45 | currency}}</div>
 
 	<div>
 		<ul>
@@ -28,20 +29,23 @@
 
 	<div>
 		<ol>
-    		<li ng-repeat="letter in ['A', 'B', 'C', 'D', 'E', 'F']">{{ letter }}</li>
+    		<li ng-repeat="letter in ['A', 'B', 'C', 'D', 'E', 'F']">{{letter}}</li>
 		</ol>
+		<ul>
+			<li ng-repeat="name in ['Jay', 'Max', 'Alison', 'Matt', 'Alex']  | filter:'x' ">{{name}}</li>
+		</ul>
 	</div>
 
 	<div>
 		<ul>
     		<li ng-repeat="num in [1, 2, 3, 4, 5, 6, 7, 8, 9]" ng-hide="num % 3 == 0">
-        {{ num }} is not divisible by three. That's why you can see it.
+        {{num}} is not divisible by three. That's why you can see it.
     		</li>
 		</ul>
 	</div>
 	<div>
 		<ul>
-			<li ng-repeat="letters in ['a', 'b', 'c', 'd', 'e', 'f', 'g']">{{ letters | lowercase }} {{ letters | uppercase }}</li>
+			<li ng-repeat="letters in ['a', 'b', 'c', 'd', 'e', 'f', 'g']">{{letters | lowercase}} {{letters | uppercas}}</li>
 		</ul>
 	</div>
 	<div>
@@ -65,8 +69,11 @@
 	</form>
 
 	<div>
-    	Welcome {{ user.firstName }} {{ user.lastName }}<br>
-    	We will send a confirmation eMail to {{ user.email }}
+    	Welcome {{user.firstName + " " + user.lastName}}<br>
+    	We will send a confirmation eMail to {{user.email}}
+	</div>
+	<div>
+		<p>The Url of this page is: {{thisUrl}}</p>
 	</div>
 
 
