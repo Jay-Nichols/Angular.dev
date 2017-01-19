@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="myApp" ng-controller="appController">
 <head>
 	<meta charset="utf-8">
 	<title>Angular Practice</title>
@@ -9,12 +9,12 @@
 <body>
 	<div>
       	<label>Name:</label>
-      	<input type="text" ng-model="yourName" placeholder="Enter a name here">
-      	<hr>
-      	<h1>Hello {{yourName}}!</h1>
+      	<input type="text" ng-model="firstName" placeholder="Enter a name here">
+      	<h1>Hello {{ firstName }}!</h1>
+      	<h2>The full name is: {{ fullName() }}</h2>
     </div>
    
-	<div>{{ 12347859834.9345345 | number:2}}</div>
+	<div>{{ 12347859834.9345345 | number:2 }}</div>
 
 	<div>
 		<ul>
@@ -41,7 +41,7 @@
 	</div>
 	<div>
 		<ul>
-			<li ng-repeat="letters in ['a', 'b', 'c', 'd', 'e', 'f', 'g']">{{ letters | lowercase}} {{ letters | uppercase}}</li>
+			<li ng-repeat="letters in ['a', 'b', 'c', 'd', 'e', 'f', 'g']">{{ letters | lowercase }} {{ letters | uppercase }}</li>
 		</ul>
 	</div>
 	<div>
@@ -49,6 +49,27 @@
 		<img ng-source="{{ '../img/2.jpg' }}" alt="second image">
 		<img ng-source="{{ '../img/3.jpg' }}" alt="third image">
 	</div>
+
+	<form>
+	    <label for="first_name">First Name</label>
+	    <input type="text" id="first_name" ng-model="user.firstName" maxlength="50" required>
+
+	    <label for="last_name">Last Name</label>
+	    <input type="text" id="last_name"  ng-model="user.lastName" maxlength="50" required>
+
+	    <label for="email">eMail</label>
+	    <input type="email" id="email" ng-model="user.email" required>
+
+	    <label for="password">Password</label>
+	    <input type="password" id="password" ng-model="user.password" minlength="6" required>
+	</form>
+
+	<div>
+    	Welcome {{ user.firstName }} {{ user.lastName }}<br>
+    	We will send a confirmation eMail to {{ user.email }}
+	</div>
+
+
     <script src="../js/angular_practice.js"></script>
 </body>
 </html>
