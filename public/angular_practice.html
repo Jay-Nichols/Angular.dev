@@ -45,16 +45,16 @@
 	</div>
 	<div>
 		<ul>
-			<li ng-repeat="letters in ['a', 'b', 'c', 'd', 'e', 'f', 'g']">{{letters | lowercase}} {{letters | uppercas}}</li>
+			<li ng-repeat="letters in ['a', 'b', 'c', 'd', 'e', 'f', 'g']">{{letters | lowercase}} {{letters | uppercase}}</li>
 		</ul>
 	</div>
 	<div>
-		<img ng-source="{{ '../img/1.jpg' }}" alt="first image">
-		<img ng-source="{{ '../img/2.jpg' }}" alt="second image">
-		<img ng-source="{{ '../img/3.jpg' }}" alt="third image">
+		<img ng-source="{{'../img/1.jpg'}}" alt="first image">
+		<img ng-source="{{'../img/2.jpg'}}" alt="second image">
+		<img ng-source="{{'../img/3.jpg'}}" alt="third image">
 	</div>
 
-	<form>
+	<form name="myForm">
 	    <label for="first_name">First Name</label>
 	    <input type="text" id="first_name" ng-model="user.firstName" maxlength="50" required>
 
@@ -62,7 +62,7 @@
 	    <input type="text" id="last_name"  ng-model="user.lastName" maxlength="50" required>
 
 	    <label for="email">eMail</label>
-	    <input type="email" id="email" ng-model="user.email" required>
+	    <input type="email" name="myEmail" id="email" ng-model="user.email" required>
 
 	    <label for="password">Password</label>
 	    <input type="password" id="password" ng-model="user.password" minlength="6" required>
@@ -70,10 +70,12 @@
 
 	<div>
     	Welcome {{user.firstName + " " + user.lastName}}<br>
-    	We will send a confirmation eMail to {{user.email}}
+    	We will send a confirmation eMail to {{myForm.myEmail.$valid}}
 	</div>
 	<div>
 		<p>The Url of this page is: {{thisUrl}}</p>
+		<button ng-click="count = count + 1">Click Me!</button>
+		<p>{{count}}</p>
 	</div>
 
 
