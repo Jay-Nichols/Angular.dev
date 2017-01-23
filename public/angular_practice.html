@@ -5,8 +5,9 @@
 	<title>Angular Practice</title>
 	<link rel="stylesheet" href="../css/angular.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
 </head>
-<body>
+<body ng-app="ngAnimate">
 	<div>
       	<label>Enter your first name:</label>
       	<input type="text" ng-model="firstName" placeholder="Enter a name here">
@@ -76,6 +77,12 @@
 		<p>The Url of this page is: {{thisUrl}}</p>
 		<button ng-click="count = count + 1">Click Me!</button>
 		<p>{{count}}</p>
+	</div>
+	<div>
+
+		<p>{{x1}}</p>
+		<p>Same as above, but using angular.lowercase(): {{x2}}</p>
+		<p>Now with angular.uppercase(): {{x3}}</p>
 	</div>
 
 
