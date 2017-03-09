@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp" ng-controller="appController">
+<html ng-app="myApp" ng-controller="AppController">
 <head>
 	<meta charset="utf-8">
 	<title>Angular Practice</title>
@@ -9,9 +9,13 @@
 </head>
 <body ng-app="ngAnimate">
 	<div>
+		<p>Here is an injection: (In html, you put something between double curly braces and it prints out for you. Here, I put in (9 * 8) / 2.</p>
+		<p>{{ (9 * 8) / 2 }}</p>
+	</div>
+	<div>
       	<label>Enter your first name:</label>
       	<input type="text" ng-model="firstName" placeholder="Enter a name here">
-      	<h1>Hello {{firstName}}!</h1>
+      	<h1>Hello: {{firstName}}!</h1>
       	<h2>The full name is: {{fullName()}}</h2>
     </div>
    
@@ -55,7 +59,7 @@
 		<img ng-source="{{'../img/3.jpg'}}" alt="third image">
 	</div>
 
-	<form name="myForm">
+	<form novalidate>
 	    <label for="first_name">First Name</label>
 	    <input type="text" id="first_name" ng-model="user.firstName" maxlength="50" required>
 
@@ -63,15 +67,15 @@
 	    <input type="text" id="last_name"  ng-model="user.lastName" maxlength="50" required>
 
 	    <label for="email">eMail</label>
-	    <input type="email" name="myEmail" id="email" ng-model="user.email" required>
+	    <input type="email" name="myEmail" id="email" ng-model="user.email"  required>
 
 	    <label for="password">Password</label>
-	    <input type="password" id="password" ng-model="user.password" minlength="6" required>
+	    <input type="password" id="password" ng-model="user.password" minlength="12" required>
 	</form>
 	<!--test -->
 	<div>
     	Welcome {{user.firstName + " " + user.lastName}}<br>
-    	We will send a confirmation eMail to {{myForm.myEmail.$valid}}
+    	We will send a confirmation eMail to {{user.email}}
 	</div>
 	<div>
 		<p>The Url of this page is: {{thisUrl}}</p>

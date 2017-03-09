@@ -2,7 +2,7 @@
 
 (function() {
     var app = angular.module("myApp", []);
-    app.controller('appController', function($scope, $location) {
+    app.controller('AppController', function($scope, $location) {
     	$scope.firstName = "Jay";
     	$scope.lastName = "Nichols";
     	$scope.count = 0;
