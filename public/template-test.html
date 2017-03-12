@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="templateTest">
+<head>
+	<title>Template Test</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/angular.css">
+</head>
+<body>
+	<div>
+		<ul>
+			<li ng-repeat="num in [1, 2, 3, 4, 5, 6, 7, 8, 9]">{{ num }}</li>
+			<li ng-repeat="num in [1, 2, 3, 4, 5, 6, 7, 8, 9]" ng-if="num > 3">{{ num }} is greater than 3</li>
+			<li ng-repeat="num in [1, 2, 3, 4, 5, 6, 7, 8, 9]" ng-hide="num > 5">{{ num }}</li>
+			<li ng-repeat="num in [1, 2, 3, 4, 5, 6, 7, 8, 9]" ng-show="num > 5">{{ num }}</li>
+		</ul>
+		<ol>
+			<li ng-repeat="letter in ['A', 'B', 'C', 'D', 'E', 'F']">{{ letter | lowercase }} has been piped through a lowercase filter</li>
+			<li ng-repeat="letter in ['A', 'B', 'C', 'D', 'E', 'F']">{{ letter | uppercase }} has been piped through an uppercase filter</li>
+		</ol>
+	</div>
+	
+	<img ng-src="{{ '../img/shell-1.jpg' }}" alt="shell-1">	
+	<img ng-src="{{ '../img/shell-2.jpg' }}" alt="shell-2">
+	<img ng-src="{{ '../img/shell-3.jpg' }}" alt="shell-3">"
+	
+	<script src="../js/angular.min.js"></script>
+	<script src="../js/templateTest.js"></script>
+</body>
+</html>
