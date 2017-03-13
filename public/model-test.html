@@ -3,6 +3,24 @@
 <head>
 	<title>Model Test</title>
 	<meta charset="utf-8">
+	<style>
+
+		input.ng-invalid {
+			background-color: red;
+			color: white;
+		}
+
+		input.ng-pristine {
+			background-color: white;
+		}
+
+		input.ng-valid {
+			background-color: limegreen;
+			color: white;
+		}
+
+
+	</style>
 </head>
 <body>
 	<form novalidate>
@@ -17,14 +35,20 @@
 		<label for="github">Github Page</label>
 		<input type="url" id="github" ng-model="user.github" required><br>
 
-		<label for="image">Select an Image</label>
-		<select id="image" name="image">
-			<option></option>
-			<option></option>
-			<option></option>
-
-		
+		<!-- <label for="image">Select an Image</label>
+		<select id="image" name="image" ng-model="user.image"> 
+			<img ng-repeat="icon in ['head.jpg', 'oldlady.png', 'oldpeaople.png']">
+			<option ng-src="../img/{{ icon }}">Head</option>
+			<option ng-src="../img/{{ icon }}">Old Lady</option>
+			<option ng-src="../img/{{ icon }}">Old People</option>
+		</select> <br> -->
+		<button type="submit">Submit Form</button>	
 	</form>
+
+	<p>User Name: {{ user.name }}</p>
+	<p>User Email: {{ user.email }}</p>
+	<p>User Date of Birth: {{ user.birthday }}</p>
+	<p>User Github: {{ user.github }}</p>
 
 	<script type="text/javascript" src="../js/angular.min.js"></script>
 	<script type="text/javascript" src="../js/modelTest.js"></script>
